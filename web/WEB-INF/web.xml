@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+<!--    /: http://ip:port/工程路径/  映射到idea的web目录下-->
+<!--    <servlet>-->
+<!--        <servlet-name>起别名</servlet-name>-->
+<!--        <servlet-class>全类名</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>给谁用</servlet-name>-->
+<!--        <url-pattern>web下的目录</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+<!--    用户登录-->
+    <servlet>
+        <servlet-name>UserServlet</servlet-name>
+        <servlet-class>com.czc.web.UserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserServlet</servlet-name>
+        <url-pattern>/userServlet</url-pattern>
+    </servlet-mapping>
+
+<!--    图书管理-->
+    <servlet>
+        <servlet-name>BookServlet</servlet-name>
+        <servlet-class>com.czc.web.BookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BookServlet</servlet-name>
+        <url-pattern>/manager/bookServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--    前端页面图书管理-->
+    <servlet>
+        <servlet-name>ClientBookServlet</servlet-name>
+        <servlet-class>com.czc.web.ClientBookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ClientBookServlet</servlet-name>
+        <url-pattern>/client/clientBookServlet</url-pattern>
+    </servlet-mapping>
+
+<!--    验证码的配置-->
+    <servlet>
+        <servlet-name>kaptchaServlet</servlet-name>
+        <servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>kaptchaServlet</servlet-name>
+        <url-pattern>/kaptcha.jpg</url-pattern>
+    </servlet-mapping>
+
+    <!--    购物车的配置-->
+    <servlet>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>com.czc.web.CartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/cartServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--    订单结算的配置-->
+    <servlet>
+        <servlet-name>OrderServlet</servlet-name>
+        <servlet-class>com.czc.web.OrderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderServlet</servlet-name>
+        <url-pattern>/orderServlet</url-pattern>
+    </servlet-mapping>
+</web-app>
